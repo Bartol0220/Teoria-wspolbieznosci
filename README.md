@@ -1,1 +1,1 @@
-# Teoria-wsp-bie-no-ci
+# Teoria współbieżności
