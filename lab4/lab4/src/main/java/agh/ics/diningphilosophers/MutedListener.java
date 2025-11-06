@@ -1,3 +1,5 @@
+package agh.ics.diningphilosophers;
+
 public class MutedListener implements PhilospherListener {
     @Override
     public void newInformation(String information) {

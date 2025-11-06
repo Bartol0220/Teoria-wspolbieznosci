@@ -1,15 +1,181 @@
-Rozwiązanie z możliwością zagłodzenia,4,0.110987,
-Rozwiązanie z możliwością zagłodzenia,1,0.029613999999999998,
-Rozwiązanie z możliwością zagłodzenia,0,0.10438499999999999,
-Rozwiązanie z możliwością zagłodzenia,3,0.105194,
-Rozwiązanie z możliwością zagłodzenia,2,0.09830399999999999,
-Rozwiązanie asymetryczne,4,627.755177,
-Rozwiązanie asymetryczne,3,633.711696,
-Rozwiązanie asymetryczne,2,643.003358,
-Rozwiązanie asymetryczne,0,673.634249,
-Rozwiązanie asymetryczne,1,679.7966779999999,
-Rozwiązanie z arbitrem,2,820.437025,
-Rozwiązanie z arbitrem,3,846.1725789999999,
-Rozwiązanie z arbitrem,1,830.912529,
-Rozwiązanie z arbitrem,4,830.522004,
-Rozwiązanie z arbitrem,0,830.622788,
+nazwa rozwiazania,liczba filozofow,numer filozofa,sredni czas oczekiwania
+Rozwiązanie z możliwością zagłodzenia,5,2,433.926886
+Rozwiązanie z możliwością zagłodzenia,5,0,439.906194
+Rozwiązanie z możliwością zagłodzenia,5,3,440.915599
+Rozwiązanie z możliwością zagłodzenia,5,4,443.17776599999996
+Rozwiązanie z możliwością zagłodzenia,5,1,442.23003900000003
+Rozwiązanie asymetryczne,5,4,402.856713
+Rozwiązanie asymetryczne,5,3,458.703549
+Rozwiązanie asymetryczne,5,2,463.96606999999995
+Rozwiązanie asymetryczne,5,1,846.491576
+Rozwiązanie asymetryczne,5,0,851.283878
+Rozwiązanie z arbitrem,5,1,1911.319931
+Rozwiązanie z arbitrem,5,0,1916.142893
+Rozwiązanie z arbitrem,5,4,1921.2014559999998
+Rozwiązanie z arbitrem,5,3,1925.9227110000002
+Rozwiązanie z arbitrem,5,2,1931.519683
+Rozwiązanie z możliwością zagłodzenia,10,1,438.942501
+Rozwiązanie z możliwością zagłodzenia,10,9,442.709865
+Rozwiązanie z możliwością zagłodzenia,10,4,442.466766
+Rozwiązanie z możliwością zagłodzenia,10,7,443.32385600000003
+Rozwiązanie z możliwością zagłodzenia,10,5,447.69509700000003
+Rozwiązanie z możliwością zagłodzenia,10,8,448.058051
+Rozwiązanie z możliwością zagłodzenia,10,3,442.732602
+Rozwiązanie z możliwością zagłodzenia,10,6,446.99936099999996
+Rozwiązanie z możliwością zagłodzenia,10,0,447.10294300000004
+Rozwiązanie z możliwością zagłodzenia,10,2,448.410807
+Rozwiązanie asymetryczne,10,4,397.622649
+Rozwiązanie asymetryczne,10,7,402.60076699999996
+Rozwiązanie asymetryczne,10,5,402.59232199999997
+Rozwiązanie asymetryczne,10,9,402.60137499999996
+Rozwiązanie asymetryczne,10,2,407.745293
+Rozwiązanie asymetryczne,10,6,407.808227
+Rozwiązanie asymetryczne,10,8,407.805088
+Rozwiązanie asymetryczne,10,3,412.847227
+Rozwiązanie asymetryczne,10,1,412.861475
+Rozwiązanie asymetryczne,10,0,417.95828500000005
+Rozwiązanie z arbitrem,10,6,647.173007
+Rozwiązanie z arbitrem,10,9,647.439863
+Rozwiązanie z arbitrem,10,1,652.200874
+Rozwiązanie z arbitrem,10,8,652.0421259999999
+Rozwiązanie z arbitrem,10,5,652.258705
+Rozwiązanie z arbitrem,10,3,652.261149
+Rozwiązanie z arbitrem,10,0,657.024776
+Rozwiązanie z arbitrem,10,2,657.248611
+Rozwiązanie z arbitrem,10,4,657.3199249999999
+Rozwiązanie z arbitrem,10,7,657.456148
+Rozwiązanie z możliwością zagłodzenia,15,14,398.24035100000003
+Rozwiązanie z możliwością zagłodzenia,15,9,412.943567
+Rozwiązanie z możliwością zagłodzenia,15,6,425.95403400000004
+Rozwiązanie z możliwością zagłodzenia,15,1,419.764234
+Rozwiązanie z możliwością zagłodzenia,15,13,432.89628400000004
+Rozwiązanie z możliwością zagłodzenia,15,5,419.352281
+Rozwiązanie z możliwością zagłodzenia,15,12,432.15928399999996
+Rozwiązanie z możliwością zagłodzenia,15,8,426.165507
+Rozwiązanie z możliwością zagłodzenia,15,2,445.65322999999995
+Rozwiązanie z możliwością zagłodzenia,15,11,425.903509
+Rozwiązanie z możliwością zagłodzenia,15,7,436.98845199999994
+Rozwiązanie z możliwością zagłodzenia,15,0,442.768591
+Rozwiązanie z możliwością zagłodzenia,15,3,441.86054299999995
+Rozwiązanie z możliwością zagłodzenia,15,10,441.787286
+Rozwiązanie z możliwością zagłodzenia,15,4,448.757558
+Rozwiązanie asymetryczne,15,6,397.687622
+Rozwiązanie asymetryczne,15,9,402.90986899999996
+Rozwiązanie asymetryczne,15,13,402.956768
+Rozwiązanie asymetryczne,15,7,402.904523
+Rozwiązanie asymetryczne,15,12,407.87784800000003
+Rozwiązanie asymetryczne,15,8,407.866079
+Rozwiązanie asymetryczne,15,14,407.90884100000005
+Rozwiązanie asymetryczne,15,4,407.906426
+Rozwiązanie asymetryczne,15,10,407.92648399999996
+Rozwiązanie asymetryczne,15,11,413.113292
+Rozwiązanie asymetryczne,15,5,413.110458
+Rozwiązanie asymetryczne,15,2,494.525008
+Rozwiązanie asymetryczne,15,3,499.71727500000003
+Rozwiązanie asymetryczne,15,0,800.596123
+Rozwiązanie asymetryczne,15,1,805.552882
+Rozwiązanie z arbitrem,15,2,642.169361
+Rozwiązanie z arbitrem,15,0,642.325457
+Rozwiązanie z arbitrem,15,1,647.1094400000001
+Rozwiązanie z arbitrem,15,14,647.076491
+Rozwiązanie z arbitrem,15,12,647.198694
+Rozwiązanie z arbitrem,15,13,652.283593
+Rozwiązanie z arbitrem,15,4,652.62736
+Rozwiązanie z arbitrem,15,11,652.1568609999999
+Rozwiązanie z arbitrem,15,6,657.50922
+Rozwiązanie z arbitrem,15,3,657.256954
+Rozwiązanie z arbitrem,15,8,657.2983680000001
+Rozwiązanie z arbitrem,15,10,657.457949
+Rozwiązanie z arbitrem,15,9,662.404239
+Rozwiązanie z arbitrem,15,7,662.550094
+Rozwiązanie z arbitrem,15,5,662.4131359999999
+Rozwiązanie z możliwością zagłodzenia,30,11,408.32973599999997
+Rozwiązanie z możliwością zagłodzenia,30,19,424.282834
+Rozwiązanie z możliwością zagłodzenia,30,15,430.621363
+Rozwiązanie z możliwością zagłodzenia,30,7,421.023314
+Rozwiązanie z możliwością zagłodzenia,30,17,427.700936
+Rozwiązanie z możliwością zagłodzenia,30,26,429.178507
+Rozwiązanie z możliwością zagłodzenia,30,3,423.264994
+Rozwiązanie z możliwością zagłodzenia,30,23,428.15871899999996
+Rozwiązanie z możliwością zagłodzenia,30,13,428.09386700000005
+Rozwiązanie z możliwością zagłodzenia,30,5,435.56717199999997
+Rozwiązanie z możliwością zagłodzenia,30,14,440.900529
+Rozwiązanie z możliwością zagłodzenia,30,18,442.91190900000004
+Rozwiązanie z możliwością zagłodzenia,30,9,436.23118
+Rozwiązanie z możliwością zagłodzenia,30,21,439.002682
+Rozwiązanie z możliwością zagłodzenia,30,16,441.026429
+Rozwiązanie z możliwością zagłodzenia,30,20,443.715105
+Rozwiązanie z możliwością zagłodzenia,30,4,447.468125
+Rozwiązanie z możliwością zagłodzenia,30,12,442.828695
+Rozwiązanie z możliwością zagłodzenia,30,27,444.71080800000004
+Rozwiązanie z możliwością zagłodzenia,30,25,439.510224
+Rozwiązanie z możliwością zagłodzenia,30,10,444.079981
+Rozwiązanie z możliwością zagłodzenia,30,22,445.468252
+Rozwiązanie z możliwością zagłodzenia,30,6,446.618985
+Rozwiązanie z możliwością zagłodzenia,30,29,436.94729
+Rozwiązanie z możliwością zagłodzenia,30,24,446.045282
+Rozwiązanie z możliwością zagłodzenia,30,8,445.309736
+Rozwiązanie z możliwością zagłodzenia,30,28,446.927311
+Rozwiązanie z możliwością zagłodzenia,30,2,434.602971
+Rozwiązanie z możliwością zagłodzenia,30,0,447.780078
+Rozwiązanie z możliwością zagłodzenia,30,1,449.146663
+Rozwiązanie asymetryczne,30,3,397.928001
+Rozwiązanie asymetryczne,30,5,397.910127
+Rozwiązanie asymetryczne,30,2,403.12146
+Rozwiązanie asymetryczne,30,16,403.24456100000003
+Rozwiązanie asymetryczne,30,14,403.148535
+Rozwiązanie asymetryczne,30,12,403.100137
+Rozwiązanie asymetryczne,30,4,403.125466
+Rozwiązanie asymetryczne,30,6,402.863639
+Rozwiązanie asymetryczne,30,20,403.30966
+Rozwiązanie asymetryczne,30,8,402.87190300000003
+Rozwiązanie asymetryczne,30,0,402.96061199999997
+Rozwiązanie asymetryczne,30,28,402.92697
+Rozwiązanie asymetryczne,30,19,408.07148
+Rozwiązanie asymetryczne,30,11,408.083779
+Rozwiązanie asymetryczne,30,21,407.99240599999996
+Rozwiązanie asymetryczne,30,7,407.956957
+Rozwiązanie asymetryczne,30,29,407.915419
+Rozwiązanie asymetryczne,30,1,408.136061
+Rozwiązanie asymetryczne,30,25,408.09978
+Rozwiązanie asymetryczne,30,13,407.89249300000006
+Rozwiązanie asymetryczne,30,9,407.916389
+Rozwiązanie asymetryczne,30,17,408.04506699999996
+Rozwiązanie asymetryczne,30,15,407.868946
+Rozwiązanie asymetryczne,30,23,408.05838000000006
+Rozwiązanie asymetryczne,30,26,413.14113299999997
+Rozwiązanie asymetryczne,30,18,413.247248
+Rozwiązanie asymetryczne,30,10,413.302053
+Rozwiązanie asymetryczne,30,22,413.325767
+Rozwiązanie asymetryczne,30,24,413.199816
+Rozwiązanie asymetryczne,30,27,418.338899
+Rozwiązanie z arbitrem,30,27,891.777307
+Rozwiązanie z arbitrem,30,26,896.615417
+Rozwiązanie z arbitrem,30,4,897.3063589999999
+Rozwiązanie z arbitrem,30,22,897.1563430000001
+Rozwiązanie z arbitrem,30,25,901.622973
+Rozwiązanie z arbitrem,30,3,901.881648
+Rozwiązanie z arbitrem,30,21,902.2292789999999
+Rozwiązanie z arbitrem,30,7,901.7974589999999
+Rozwiązanie z arbitrem,30,0,901.8837189999999
+Rozwiązanie z arbitrem,30,12,902.2542149999999
+Rozwiązanie z arbitrem,30,14,906.797356
+Rozwiązanie z arbitrem,30,24,906.893359
+Rozwiązanie z arbitrem,30,16,906.930484
+Rozwiązanie z arbitrem,30,18,907.011501
+Rozwiązanie z arbitrem,30,2,906.9016839999999
+Rozwiązanie z arbitrem,30,29,907.292859
+Rozwiązanie z arbitrem,30,6,907.0593489999999
+Rozwiązanie z arbitrem,30,20,907.202127
+Rozwiązanie z arbitrem,30,9,907.344912
+Rozwiązanie z arbitrem,30,11,907.1250299999999
+Rozwiązanie z arbitrem,30,13,911.772716
+Rozwiązanie z arbitrem,30,23,911.860941
+Rozwiązanie z arbitrem,30,17,911.979986
+Rozwiązanie z arbitrem,30,1,912.171603
+Rozwiązanie z arbitrem,30,15,911.820432
+Rozwiązanie z arbitrem,30,5,912.280485
+Rozwiązanie z arbitrem,30,28,912.35363
+Rozwiązanie z arbitrem,30,19,912.334258
+Rozwiązanie z arbitrem,30,10,912.473305
+Rozwiązanie z arbitrem,30,8,912.294793

@@ -1,10 +1,15 @@
+package agh.ics.diningphilosophers.model;
+
+import agh.ics.diningphilosophers.PhilospherListener;
+import agh.ics.diningphilosophers.solutions.Solution;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Philosopher implements Runnable {
     private final Random rand;
     private final int index;
-    private final Action action;
+    private final Solution solution;
     private final int numberOfPhilosophers;
     private final PhilospherListener listener;
     private boolean ate = true;
@@ -12,10 +17,10 @@ public class Philosopher implements Runnable {
     private final ArrayList<Double> waitingTimes = new ArrayList<>();
     static final int MAX_ITERATIONS = 100;
 
-    public Philosopher(int index, int numberOfPhilosophers, Action action, PhilospherListener listener) {
+    public Philosopher(int index, int numberOfPhilosophers, Solution solution, PhilospherListener listener) {
         this.index = index;
         this.rand = new Random();
-        this.action = action;
+        this.solution = solution;
         this.numberOfPhilosophers = numberOfPhilosophers;
         this.listener = listener;
     }
@@ -34,7 +39,7 @@ public class Philosopher implements Runnable {
 
     private void  think(){
         try {
-            if (action.isTimeRandom()){
+            if (solution.isTimeRandom()){
                 Thread.sleep(10 + rand.nextInt(2000));
             } else {
                 Thread.sleep(100);
@@ -46,7 +51,7 @@ public class Philosopher implements Runnable {
 
     private  void eat() {
         long startTime = System.nanoTime();
-        boolean res = action.startEating(this);
+        boolean res = solution.startEating(this);
         long endTime = System.nanoTime();
         if (!ate) {
             waitingTimes.add((endTime - startTime)/1_000_000.0 + waitingTimes.removeLast());
@@ -55,17 +60,19 @@ public class Philosopher implements Runnable {
         }
         ate = res;
 
-        try {
-            if (action.isTimeRandom()){
-                Thread.sleep(50 + rand.nextInt(1000));
-            } else {
-                Thread.sleep(500);
+        if (res) {
+            try {
+                if (solution.isTimeRandom()){
+                    Thread.sleep(50 + rand.nextInt(1000));
+                } else {
+                    Thread.sleep(500);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        action.endEating(this);
+            solution.endEating(this);
+        }
     }
 
     @Override
@@ -95,6 +102,13 @@ public class Philosopher implements Runnable {
                 .average()
                 .orElse(0.0);
 
-        listener.exportTime(averageTime, index, action);
+        listener.exportTimeAvg(averageTime, index, solution, numberOfPhilosophers);
+
+        double maxTime = waitingTimes.stream()
+                .mapToDouble(Double::doubleValue)
+                .max()
+                .orElse(0.0);
+
+        listener.exportTimeMax(maxTime, index, solution, numberOfPhilosophers);
     }
 }

@@ -1,3 +1,5 @@
+package agh.ics.diningphilosophers.model;
+
 public class Forks {
     private final Fork[] forksArray;
 
