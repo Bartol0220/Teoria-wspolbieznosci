@@ -1,6 +1,6 @@
 package agh.ics.producerconsumer.model;
 
-class Producer extends Thread {
+public class Producer extends Thread {
     private final Buffer buf;
 
     public Producer(Buffer buf) {

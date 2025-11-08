@@ -1,6 +1,6 @@
 package agh.ics.producerconsumer.model;
 
-class Consumer extends Thread {
+public class Consumer extends Thread {
     private final Buffer buf;
 
     public Consumer(Buffer buf) {
@@ -9,7 +9,9 @@ class Consumer extends Thread {
 
     public void run() {
         for (int i = 0; i < 100; ++i) {
-            System.out.println(buf.get());
+            int res = buf.get();
+            if (res == -1) break;
+            System.out.println(res);
         }
     }
 }

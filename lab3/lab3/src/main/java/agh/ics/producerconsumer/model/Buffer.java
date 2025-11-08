@@ -2,10 +2,12 @@ package agh.ics.producerconsumer.model;
 
 import java.util.LinkedList;
 
-class Buffer {
+public class Buffer {
     private final int capacity;
     private final LinkedList<Integer> buffer;
     private int currentSize = 0;
+    private boolean stoppedProducing = false;
+    private boolean stoppedConsuming = false;
 
     public Buffer(int capacity) {
         this.capacity = capacity;
@@ -14,6 +16,7 @@ class Buffer {
 
     public synchronized void put(int i) {
         while (currentSize >= capacity) {
+            if (stoppedConsuming) return;
             try {
                 wait();
             }  catch (InterruptedException e) {
@@ -27,15 +30,26 @@ class Buffer {
 
     public synchronized int get() {
         while (currentSize <= 0) {
+            if (stoppedProducing) return -1;
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        int res = buffer.getLast();
+        int res = buffer.removeFirst();
         currentSize -= 1;
         notifyAll();
         return res;
+    }
+
+    public synchronized void stopProducing() {
+        stoppedProducing = true;
+        notifyAll();
+    }
+
+    public synchronized void stopConsuming() {
+        stoppedConsuming = true;
+        notifyAll();
     }
 }
