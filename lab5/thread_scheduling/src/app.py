@@ -8,6 +8,9 @@ import fnf
 
 
 def parse_file(filename):
+    """
+    Finds in file actions, alphabet and word.
+    """
     action_regex = r"\(([a-z])\) ([a-z]) := ([a-z0-9\+\-\*\/ ]*)"
     alphabet_regex = r"A = {([a-z, ]*)}"
     letter_regex = r"[a-z]"
@@ -55,10 +58,13 @@ def parse_file(filename):
 
 
 
-def export_results(filename, dependency_relation, independance_relation, fnf_array, Graph, word):
-    D = relations.prepereD(dependency_relation)
-    I = relations.prepereI(independance_relation)
-    fnf_res = fnf.prepere_fnf(fnf_array)
+def export_results(filename, dependency_relation, independence_relation, fnf_array, Graph, word):
+    """
+    Exports results to file res_filename.
+    """
+    D = relations.prepareD(dependency_relation)
+    I = relations.prepareI(independence_relation)
+    fnf_res = fnf.prepare_fnf(fnf_array)
     graph_dot = dependency_graph.graph_to_dot(Graph, word)
 
     res_path = os.path.join("results", "res_" + filename)
@@ -84,14 +90,14 @@ def main():
         sys.exit(f"File: {filename} not found in data directory")
     
     actions_dict, letters, word = parse_file(data_path)
-    dependency_relation, independance_relation = relations.determine_relations(actions_dict, letters)
+    dependency_relation, independence_relation = relations.determine_relations(actions_dict, letters)
     Graph, labels = dependency_graph.make_graph(dependency_relation, word)
     fnf_array = fnf.find(Graph, word)
 
-    export_results(filename, dependency_relation, independance_relation, fnf_array, Graph, word)
+    export_results(filename, dependency_relation, independence_relation, fnf_array, Graph, word)
 
     relations.printD(dependency_relation)
-    relations.printI(independance_relation)
+    relations.printI(independence_relation)
     fnf.print_fnf(fnf_array)
     dependency_graph.print_graph_dot(Graph, word)
     dependency_graph.draw_graph(Graph, labels, word)

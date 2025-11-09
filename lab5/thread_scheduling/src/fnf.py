@@ -1,11 +1,14 @@
 def find(G, word):
+    """
+    Finds foat normal form.
+    """
     fnf_array = []
     fnf_word_array = []
     n = G.number_of_nodes()
     visited = [False] * n
 
 
-    def dfs(s, i):
+    def dfs(s, i): # We use DFS to visit all vertices
         visited[s] = True
         if i < len(fnf_array):
             fnf_array[i].append(s)
@@ -15,7 +18,7 @@ def find(G, word):
             fnf_word_array.append([word[s]])
         for v in G.neighbors(s):
             if not visited[v]:
-                dfs(v, i+1)
+                dfs(v, i+1) # If there is a path to the vertex, it must be run later
 
 
     for v in range(n):
@@ -26,7 +29,10 @@ def find(G, word):
 
 
 
-def prepere_fnf(fnf_word_array):
+def prepare_fnf(fnf_word_array):
+    """
+    Prepares string containing FNF.
+    """
     res = "FNF([w]) = "
     
     for a in fnf_word_array:
@@ -40,4 +46,7 @@ def prepere_fnf(fnf_word_array):
 
 
 def print_fnf(fnf_word_array):
-    print(prepere_fnf(fnf_word_array))
+    """
+    Printing FNF.
+    """
+    print(prepare_fnf(fnf_word_array))

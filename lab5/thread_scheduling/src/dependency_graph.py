@@ -6,6 +6,9 @@ import numpy as np
 
 
 def draw_graph(G, labels, word):
+    """
+    Draws graph with nodes horizontal.
+    """
     nodes_ordered = list(G)
 
     mul = len(word)//10 + 1
@@ -14,7 +17,7 @@ def draw_graph(G, labels, word):
     _, ax = plt.subplots(figsize=(14, 7))
 
     num_nodes = len(nodes_ordered)
-    colors = plt.cm.viridis(np.linspace(0, 1, num_nodes))
+    colors = plt.cm.viridis(np.linspace(0, 1, num_nodes)) # different colors for different vertices
     color_map = {node: colors[i] for i, node in enumerate(nodes_ordered)}
 
     nx.draw_networkx_nodes(G, pos, node_color='#939e5d', node_size=500, ax=ax)
@@ -25,7 +28,7 @@ def draw_graph(G, labels, word):
         start_pos, end_pos = pos[u], (pos[v][0] - 0.1*mul, pos[v][1])
 
         is_adjacent = abs(pos[v][0] - start_pos[0]) == 1*mul
-        current_rad = 0 if is_adjacent else arc_base_rad if u%2 == 0 else -arc_base_rad
+        current_rad = 0 if is_adjacent else arc_base_rad if u%2 == 0 else -arc_base_rad # straight edge between neighbors
         
         edge_color = color_map[u]
         arrow = FancyArrowPatch(posA=start_pos,
@@ -48,6 +51,9 @@ def draw_graph(G, labels, word):
 
 
 def graph_to_dot(G, word):
+    """
+    Represents graph in dot format.
+    """
     res = "digraph g{\n"
 
     for v in range (G.number_of_nodes()):
@@ -63,11 +69,17 @@ def graph_to_dot(G, word):
 
 
 def print_graph_dot(G, word):
+    """
+    Prints graph in dot format.
+    """
     print(graph_to_dot(G, word))
 
 
 
 def make_graph(dependency_relation, word):
+    """
+    Makes dependency graph using NetworkX.
+    """
     labels = {}
     G = nx.DiGraph()
 
@@ -80,8 +92,8 @@ def make_graph(dependency_relation, word):
         node_name = i
         dep_set = dependency_relation[letter]
         for j in range(i+1, len(word)):
-            if word[j] in dep_set:
+            if word[j] in dep_set: # if dependency relationship => edge
                 G.add_edge(node_name, j)
 
-    G = nx.transitive_reduction(G)
+    G = nx.transitive_reduction(G) # reduces unnecessary edges
     return G, labels

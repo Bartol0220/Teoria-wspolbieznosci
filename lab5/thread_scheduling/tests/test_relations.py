@@ -11,13 +11,13 @@ def test_relations_example_1():
         }
     letters = ["a", "b", "c", "d"]
 
-    dependency_relation, independance_relation = relations.determine_relations(actions_dict, letters)
+    dependency_relation, independence_relation = relations.determine_relations(actions_dict, letters)
 
     correct_dependency_relation = {'a': {'a', 'b', 'c'}, 'b': {'a', 'b', 'd'}, 'c': {'a', 'c', 'd'}, 'd': {'b', 'c', 'd'}}
-    correct_independance_relation = {'a': {'d'}, 'd': {'a'}, 'b': {'c'}, 'c': {'b'}}
+    correct_independence_relation = {'a': {'d'}, 'd': {'a'}, 'b': {'c'}, 'c': {'b'}}
 
     assert dependency_relation == correct_dependency_relation
-    assert independance_relation == correct_independance_relation
+    assert independence_relation == correct_independence_relation
 
 
 
@@ -32,10 +32,10 @@ def test_relations_example_2():
         }
     letters = ["a", "b", "c", "d", "e", "f"]
 
-    dependency_relation, independance_relation = relations.determine_relations(actions_dict, letters)
+    dependency_relation, independence_relation = relations.determine_relations(actions_dict, letters)
 
     correct_dependency_relation = {'a': {'a', 'c', 'f'}, 'b': {'b', 'e'}, 'c': {'a', 'c', 'e', 'f'}, 'd': {'d', 'f'}, 'e': {'b', 'c', 'e'}, 'f': {'a', 'c', 'd', 'f'}}
-    correct_independance_relation = {'a': {'b', 'd', 'e'}, 'b': {'a', 'c', 'd', 'f'}, 'c': {'b', 'd'}, 'd': {'a', 'b', 'c', 'e'}, 'e': {'a', 'd', 'f'}, 'f': {'b', 'e'}}
+    correct_independence_relation = {'a': {'b', 'd', 'e'}, 'b': {'a', 'c', 'd', 'f'}, 'c': {'b', 'd'}, 'd': {'a', 'b', 'c', 'e'}, 'e': {'a', 'd', 'f'}, 'f': {'b', 'e'}}
 
     assert dependency_relation == correct_dependency_relation
-    assert independance_relation == correct_independance_relation
+    assert independence_relation == correct_independence_relation
