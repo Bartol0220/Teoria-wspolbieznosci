@@ -26,3 +26,11 @@ replay_pid*
 
 # venv
 tw_env
+
+# thread_scheduling python
+build/
+*.egg-info/
+dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
