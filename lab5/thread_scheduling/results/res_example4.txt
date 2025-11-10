@@ -1,0 +1,20 @@
+D = {(a, b),(a, a),(a, c),(a, f),(a, e),(b, b),(b, d),(b, a),(b, c),(b, f),(c, c),(c, b),(c, a),(c, e),(e, d),(e, a),(e, c),(e, f),(e, e),(f, b),(f, d),(f, a),(f, f),(f, e),(d, b),(d, f),(d, d),(d, e)}
+I = {(a, d),(d, c),(d, a),(b, e),(e, b),(c, f),(c, d),(f, c)}
+FNF([w]) = (ad)(cf)(be)(b)
+digraph g{
+1 -> 2
+1 -> 4
+2 -> 5
+2 -> 7
+3 -> 4
+4 -> 5
+4 -> 7
+5 -> 6
+1[label=a]
+2[label=c]
+3[label=d]
+4[label=f]
+5[label=b]
+6[label=b]
+7[label=e]
+}

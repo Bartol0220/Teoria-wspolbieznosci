@@ -84,16 +84,13 @@ def make_graph(dependency_relation, word):
     G = nx.DiGraph()
 
     for i, letter in enumerate(word):
-        node_name = i
-        G.add_node(node_name)
-        labels[node_name] = letter
+        G.add_node(i)
+        labels[i] = letter
 
-    for i, letter in enumerate(word):
-        node_name = i
-        dep_set = dependency_relation[letter]
-        for j in range(i+1, len(word)):
-            if word[j] in dep_set: # if dependency relationship => edge
-                G.add_edge(node_name, j)
+    for i, letter in enumerate(word): # iterates over each letter
+        for j in range(i+1, len(word)): # iterates over each letter following "letter"
+            if word[j] in dependency_relation[letter]: # if dependency relationship => edge
+                G.add_edge(i, j)
 
     G = nx.transitive_reduction(G) # reduces unnecessary edges
     return G, labels

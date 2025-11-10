@@ -5,6 +5,15 @@
 - [English](#english)
 
 # Polski
+
+## Opis programu
+
+Program został napisany w języku Python. Do programu zostały dostarczone testy. Użyte biblioteki to:
+- [NumPy](https://numpy.org/),
+- [Matplotlib](https://matplotlib.org/),
+- [NetworkX](https://networkx.github.io/),
+- [pytest](https://pytest.org/).
+
 ## Instrukcja instalacji
 W głównym katalogu projektu wpisz:
 ```bash
@@ -42,7 +51,57 @@ A = {a, b, c, d, e, f}
 w = acdcfbbe
 ```
 
+## Przykład działania
+
+Dla danego pliku `example1.txt`:
+
+```
+(a) x := x + y
+(b) y := y + 2z
+(c) x := 3x + z
+(d) z := y - z
+A = {a, b, c, d}
+w = baadcb
+```
+
+Otrzymamy plik `res_example1.txt`:
+
+```
+D = {(a, a),(a, c),(a, b),(b, a),(b, d),(b, b),(c, a),(c, d),(c, c),(d, d),(d, c),(d, b)}
+I = {(a, d),(d, a),(b, c),(c, b)}
+FNF([w]) = (b)(ad)(a)(bc)
+digraph g{
+1 -> 2
+1 -> 4
+2 -> 3
+3 -> 5
+3 -> 6
+4 -> 5
+4 -> 6
+1[label=b]
+2[label=a]
+3[label=a]
+4[label=d]
+5[label=c]
+6[label=b]
+}
+```
+
+Otrzymany graf:
+
+![Graf example1](results/graph_example1.png)
+
+
 # English
+
+## Program Description
+
+The program was written in Python. Tests were provided for the program. The following libraries were used:
+- [NumPy](https://numpy.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [NetworkX](https://networkx.github.io/)
+- [pytest](https://pytest.org/)
+
 ## Installation Instructions
 In the project root directory, enter:
 ```bash
@@ -78,3 +137,43 @@ Example:
 A = {a, b, c, d, e, f}
 w = acdcfbbe
 ```
+
+## Example
+
+For the given file `example1.txt`:
+
+```
+(a) x := x + y
+(b) y := y + 2z
+(c) x := 3x + z
+(d) z := y - z
+A = {a, b, c, d}
+w = baadcb
+```
+
+We will receive the file `res_example1.txt`:
+
+```
+D = {(a, a),(a, c),(a, b),(b, a),(b, d),(b, b),(c, a),(c, d),(c, c),(d, d),(d, c),(d, b)}
+I = {(a, d),(d, a),(b, c),(c, b)}
+FNF([w]) = (b)(ad)(a)(bc)
+digraph g{
+1 -> 2
+1 -> 4
+2 -> 3
+3 -> 5
+3 -> 6
+4 -> 5
+4 -> 6
+1[label=b]
+2[label=a]
+3[label=a]
+4[label=d]
+5[label=c]
+6[label=b]
+}
+```
+
+The resulting graph:
+
+![Graph example1](results/graph_example1.png)
