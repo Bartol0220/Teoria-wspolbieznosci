@@ -22,7 +22,7 @@ public class Fork {
         isUsed = true;
     }
 
-    public synchronized void relaseFork(){
+    public synchronized void releaseFork(){
         isUsed = false;
         notifyAll();
     }

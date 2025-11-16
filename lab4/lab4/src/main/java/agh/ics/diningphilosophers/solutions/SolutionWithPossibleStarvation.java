@@ -21,7 +21,7 @@ public class SolutionWithPossibleStarvation extends AbstractSolution {
         }
 
         if (!rightFork.tryAcquire()) {
-            leftFork.relaseFork();
+            leftFork.releaseFork();
             return false;
         }
 
@@ -34,8 +34,8 @@ public class SolutionWithPossibleStarvation extends AbstractSolution {
         Fork leftFork = forks.getFork(philosopher.getLeftForkIndex());
         Fork rightFork = forks.getFork(philosopher.getRightForkIndex());
 
-        rightFork.relaseFork();
-        leftFork.relaseFork();
+        rightFork.releaseFork();
+        leftFork.releaseFork();
         listener.newInformation("Philosopher " + philosopher.getIndex() + " relased forks (" + philosopher.getLeftForkIndex() + ", " + philosopher.getRightForkIndex() + ").");
     }
 
