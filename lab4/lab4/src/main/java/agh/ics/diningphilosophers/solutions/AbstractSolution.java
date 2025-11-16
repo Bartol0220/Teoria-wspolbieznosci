@@ -24,11 +24,11 @@ public abstract class AbstractSolution implements Solution {
     @Override
     public void endEating(Philosopher philosopher) {
         Fork leftFork = forks.getFork(philosopher.getLeftForkIndex());
-        leftFork.relaseFork();
+        leftFork.releaseFork();
         listener.newInformation("Philosopher " + philosopher.getIndex() + " relased left fork (" + philosopher.getLeftForkIndex() + ").");
 
         Fork rightFork = forks.getFork(philosopher.getRightForkIndex());
-        rightFork.relaseFork();
+        rightFork.releaseFork();
         listener.newInformation("Philosopher " + philosopher.getIndex() + " relased right fork (" + philosopher.getRightForkIndex() + ").");
     }
 }

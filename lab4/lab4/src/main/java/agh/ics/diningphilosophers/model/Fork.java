@@ -22,8 +22,16 @@ public class Fork {
         isUsed = true;
     }
 
-    public synchronized void relaseFork(){
+    public synchronized void releaseFork(){
         isUsed = false;
         notifyAll();
+    }
+
+    public synchronized boolean tryAcquire() {
+        if (isUsed) {
+            return false;
+        }
+        isUsed = true;
+        return true;
     }
 }
