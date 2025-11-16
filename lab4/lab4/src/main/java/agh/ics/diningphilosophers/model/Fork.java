@@ -26,4 +26,12 @@ public class Fork {
         isUsed = false;
         notifyAll();
     }
+
+    public synchronized boolean tryAcquire() {
+        if (isUsed) {
+            return false;
+        }
+        isUsed = true;
+        return true;
+    }
 }

@@ -16,15 +16,16 @@ public class SolutionWithPossibleStarvation extends AbstractSolution {
         Fork leftFork = forks.getFork(philosopher.getLeftForkIndex());
         Fork rightFork = forks.getFork(philosopher.getRightForkIndex());
 
-        leftFork.useFork();
-        if (!rightFork.isUsed()){
-            rightFork.useFork();
-            listener.newInformation("Philosopher " + philosopher.getIndex() + " picked up forks (" + philosopher.getLeftForkIndex() + ", " + philosopher.getRightForkIndex() + ").");
-        } else {
+        if (!leftFork.tryAcquire()) {
+            return false;
+        }
+
+        if (!rightFork.tryAcquire()) {
             leftFork.relaseFork();
             return false;
         }
 
+        listener.newInformation("Philosopher " + philosopher.getIndex() + " picked up forks (" + philosopher.getLeftForkIndex() + ", " + philosopher.getRightForkIndex() + ").");
         return true;
     }
 
