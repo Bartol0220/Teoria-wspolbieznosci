@@ -2,6 +2,8 @@ package agh.ics.gaussianelimination;
 
 import agh.ics.gaussianelimination.errors.IndexOutOfRangeException;
 
+import java.sql.SQLOutput;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -13,6 +15,7 @@ public class GaussianElimination {
     private final int cols;
     private final Matrix cResults;
     private final Matrix dResults;
+    private ExecutorService executor;
 
     public GaussianElimination(Matrix matrix) {
         this.matrix = matrix;
@@ -43,7 +46,8 @@ public class GaussianElimination {
     }
 
     private void startBOperations(int i, double mi) throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        int tasksCount = cols - i;
+        CountDownLatch latch = new CountDownLatch(tasksCount);
 
         for (int j = i; j < cols; j++) {
             final int index = j;
@@ -53,21 +57,18 @@ public class GaussianElimination {
                 } catch (IndexOutOfRangeException e) {
                     System.err.println(e.getMessage());
                     System.exit(1);
+                } finally {
+                    latch.countDown();
                 }
             });
         }
 
-        executor.shutdown();
-        boolean finished = executor.awaitTermination(1, TimeUnit.HOURS);
-        if (!finished) {
-            executor.shutdownNow();
-            System.err.println("Executor terminated unsuccessfully");
-            System.exit(1);
-        }
+        latch.await();
     }
 
     private void startCOperations(int i) throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        int tasksCount = rows - 1;
+        CountDownLatch latch = new CountDownLatch(tasksCount);
 
         for (int k = 0; k < rows; k++) {
             if (k == i) continue;
@@ -79,21 +80,18 @@ public class GaussianElimination {
                 } catch (IndexOutOfRangeException e) {
                     System.err.println(e.getMessage());
                     System.exit(1);
+                } finally {
+                    latch.countDown();
                 }
             });
         }
 
-        executor.shutdown();
-        boolean finished = executor.awaitTermination(1, TimeUnit.HOURS);
-        if (!finished) {
-            executor.shutdownNow();
-            System.err.println("Executor terminated unsuccessfully");
-            System.exit(1);
-        }
+        latch.await();
     }
 
     private void startDOperations(int i) throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        int tasksCount = (rows - 1) * (cols - i);
+        CountDownLatch latch = new CountDownLatch(tasksCount);
 
         for (int k = 0; k < rows; k++) {
             if (k == i) continue;
@@ -108,22 +106,19 @@ public class GaussianElimination {
                     } catch (IndexOutOfRangeException e) {
                         System.err.println(e.getMessage());
                         System.exit(1);
+                    } finally {
+                        latch.countDown();
                     }
                 });
             }
         }
 
-        executor.shutdown();
-        boolean finished = executor.awaitTermination(1, TimeUnit.HOURS);
-        if (!finished) {
-            executor.shutdownNow();
-            System.err.println("Executor terminated unsuccessfully");
-            System.exit(1);
-        }
+        latch.await();
     }
 
     private void startEOperations(int i) throws InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        int tasksCount = (rows - 1) * (cols - i);
+        CountDownLatch latch = new CountDownLatch(tasksCount);
 
         for (int k = 0; k < rows; k++) {
             if (k == i) continue;
@@ -138,18 +133,14 @@ public class GaussianElimination {
                     } catch (IndexOutOfRangeException e) {
                         System.err.println(e.getMessage());
                         System.exit(1);
+                    } finally {
+                        latch.countDown();
                     }
                 });
             }
         }
 
-        executor.shutdown();
-        boolean finished = executor.awaitTermination(1, TimeUnit.HOURS);
-        if (!finished) {
-            executor.shutdownNow();
-            System.err.println("Executor terminated unsuccessfully");
-            System.exit(1);
-        }
+        latch.await();
     }
 
     private void startOperations(int i) throws IndexOutOfRangeException, InterruptedException {
@@ -163,7 +154,17 @@ public class GaussianElimination {
     public void solve() {
         for (int i=0; i<rows; i++) {
             try {
+                executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
                 startOperations(i);
+
+                executor.shutdown();
+                boolean finished = executor.awaitTermination(1, TimeUnit.HOURS);
+                if (!finished) {
+                    executor.shutdownNow();
+                    System.err.println("Executor terminated unsuccessfully");
+                    System.exit(1);
+                }
+
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 System.exit(1);

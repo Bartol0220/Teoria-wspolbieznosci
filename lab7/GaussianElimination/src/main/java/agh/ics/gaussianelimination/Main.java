@@ -11,16 +11,18 @@ public class Main {
         FileManager fileManager = new FileManager();
 
         try {
+            System.out.println("Loading file: " + fileName);
             Matrix matrix = fileManager.parseNewFile(fileName);
-            System.out.println(matrix);
+            System.out.println("Running gaussian elimination for matrix with size: " + matrix.getRows());
 
             GaussianElimination elim = new GaussianElimination(matrix);
             elim.solve();
 
-            System.out.println(matrix);
+            System.out.println("Done elimination");
 
             String outputFileName = fileManager.generateOutputFileName(fileName);
             fileManager.saveMatrix(outputFileName, matrix);
+            System.out.println("Saved output to: " + outputFileName);
         } catch (FileNotFoundException e) {
             System.err.println("File " + fileName + " not found.");
         } catch (InvalidFileFormatException e) {
