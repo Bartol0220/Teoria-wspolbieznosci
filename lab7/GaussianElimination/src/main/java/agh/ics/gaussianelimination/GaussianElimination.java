@@ -2,7 +2,6 @@ package agh.ics.gaussianelimination;
 
 import agh.ics.gaussianelimination.errors.IndexOutOfRangeException;
 
-import java.sql.SQLOutput;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -152,23 +151,28 @@ public class GaussianElimination {
     }
 
     public void solve() {
+        executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+
         for (int i=0; i<rows; i++) {
             try {
-                executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
                 startOperations(i);
-
-                executor.shutdown();
-                boolean finished = executor.awaitTermination(1, TimeUnit.HOURS);
-                if (!finished) {
-                    executor.shutdownNow();
-                    System.err.println("Executor terminated unsuccessfully");
-                    System.exit(1);
-                }
-
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 System.exit(1);
             }
+        }
+
+        executor.shutdown();
+        try {
+            boolean finished = executor.awaitTermination(1, TimeUnit.HOURS);
+            if (!finished) {
+                executor.shutdownNow();
+                System.err.println("Executor terminated unsuccessfully");
+                System.exit(1);
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+            System.exit(1);
         }
     }
 }
