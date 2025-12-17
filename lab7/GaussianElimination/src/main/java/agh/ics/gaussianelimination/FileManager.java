@@ -2,6 +2,7 @@ package agh.ics.gaussianelimination;
 
 import agh.ics.gaussianelimination.errors.IndexOutOfRangeException;
 import agh.ics.gaussianelimination.errors.InvalidFileFormatException;
+import agh.ics.gaussianelimination.errors.ZeroOnDiagonalException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,7 +14,7 @@ import java.util.Scanner;
 
 
 public class FileManager {
-    public Matrix  parseNewFile(String fileName) throws InvalidFileFormatException, FileNotFoundException {
+    public Matrix  parseNewFile(String fileName) throws InvalidFileFormatException, FileNotFoundException, ZeroOnDiagonalException {
         File file = new File(fileName);
 
         try (Scanner scanner = new Scanner(file).useLocale(Locale.US)) {
@@ -42,6 +43,12 @@ public class FileManager {
                     matrix.setValue(row, n, vectorValue);
                 } else {
                     throw new InvalidFileFormatException(fileName);
+                }
+            }
+
+            for (int row = 0; row < n; row++) {
+                if (matrix.getValue(row, row) == 0) {
+                    throw new ZeroOnDiagonalException(row);
                 }
             }
 

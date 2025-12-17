@@ -1,6 +1,7 @@
 package agh.ics.gaussianelimination;
 
 import agh.ics.gaussianelimination.errors.InvalidFileFormatException;
+import agh.ics.gaussianelimination.errors.ZeroOnDiagonalException;
 
 import java.io.FileNotFoundException;
 
@@ -25,7 +26,7 @@ public class Main {
             System.out.println("Saved output to: " + outputFileName);
         } catch (FileNotFoundException e) {
             System.err.println("File " + fileName + " not found.");
-        } catch (InvalidFileFormatException e) {
+        } catch (InvalidFileFormatException | ZeroOnDiagonalException e) {
             System.err.println(e.getMessage());
         }
     }
