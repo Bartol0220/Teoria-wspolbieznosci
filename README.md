@@ -10,5 +10,5 @@
 - [Lab 7](lab7/) - Współbieżna eliminacja Gaussa / Concurrent Gaussian elimination
 
 ## Projekty / Projects
-[Projekt 1](lab5/thread_scheduling/) - Szeregowanie wątków / Thread scheduling
-[Projekt 2](lab7/GaussianElimination/) - Eliminacja Gaussa-Jordana / Gauss–Jordan elimination
+- [Projekt 1](lab5/thread_scheduling/) - Szeregowanie wątków / Thread scheduling
+- [Projekt 2](lab7/GaussianElimination/) - Eliminacja Gaussa-Jordana / Gauss–Jordan elimination
