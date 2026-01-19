@@ -82,13 +82,13 @@ Otrzymamy plik `input_example1_out.txt`:
 reprezentujący:
 
 -   macierz $M$ po przekształceniu
-    ```math
-    \begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
-    \end{bmatrix}
-    ```
+```math
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+```
 -   wektor $X$ będący rozwiązaniem układu równań
     ```math
     \begin{bmatrix}
@@ -193,3 +193,4 @@ representing:
     1
     \end{bmatrix}
     ```
+
