@@ -81,21 +81,18 @@ Otrzymamy plik `input_example1_out.txt`:
 
 reprezentujący:
 
--   macierz $
-    M =
+-   macierz $M =
     \begin{bmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & 1
-    \end{bmatrix}
-    $ po przekształceniu,
--   wektor $ X =
+    \end{bmatrix}$ po przekształceniu,
+-   wektor $X =
     \begin{bmatrix}
     1 \\
     1 \\
     1
-    \end{bmatrix}
-    $ będący rozwiązaniem układu równań.
+    \end{bmatrix}$ będący rozwiązaniem układu równań.
 
 
 # English
@@ -177,19 +174,16 @@ We will receive the file `input_example1_out.txt`:
 
 representing:
 
--   the matrix $
-    M =
+-   the matrix $M =
     \begin{bmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & 1
-    \end{bmatrix}
-    $ after transformation,
--   the vector $ X =
+    \end{bmatrix}$ after transformation,
+-   the vector $X =
     \begin{bmatrix}
     1 \\
     1 \\
     1
-    \end{bmatrix}
+    \end{bmatrix}$ which is the solution to the system of equations.
 
-    $ which is the solution to the system of equations.
