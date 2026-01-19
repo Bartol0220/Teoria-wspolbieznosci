@@ -37,7 +37,7 @@ Przykład:
 
 Plik ten zostanie zinterpretowany jako:
 
-$$
+```math
 \begin{bmatrix}
 2 & 1 & 3 \\
 4 & 3 & 8 \\
@@ -55,7 +55,7 @@ x_2
 15 \\
 27
 \end{bmatrix}
-$$
+```
 
 ## Przykład działania
 
@@ -133,7 +133,7 @@ Example:
 
 This file will be interpreted as:
 
-$$
+```math
 \begin{bmatrix}
 2 & 1 & 3 \\
 4 & 3 & 8 \\
@@ -151,7 +151,7 @@ x_2
 15 \\
 27
 \end{bmatrix}
-$$
+```
 
 ## Example
 
@@ -191,4 +191,5 @@ representing:
     1 \\
     1
     \end{bmatrix}
+
     $ which is the solution to the system of equations.
